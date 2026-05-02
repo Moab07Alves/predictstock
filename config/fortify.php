@@ -134,6 +134,25 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Fortify Redirects
+    |--------------------------------------------------------------------------
+    |
+    | Define redirect paths after authentication actions. If null, uses
+    | default Laravel behavior.
+    |
+    */
+
+    'redirects' => [
+        'login' => null,
+        'logout' => null,
+        'password-confirmation' => null,
+        'register' => null,
+        'email-verification' => null,
+        'password-reset' => null,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Features
     |--------------------------------------------------------------------------
     |
@@ -146,13 +165,13 @@ return [
     'features' => [
         Features::registration(),
         Features::resetPasswords(),
-        // Features::emailVerification(),
+        Features::emailVerification(),
         Features::updateProfileInformation(),
         Features::updatePasswords(),
         Features::twoFactorAuthentication([
             'confirm' => true,
             'confirmPassword' => true,
-            // 'window' => 0,
+            'window' => 1,
         ]),
     ],
 
