@@ -44,5 +44,25 @@ class FortifyServiceProvider extends ServiceProvider
         RateLimiter::for('two-factor', function (Request $request) {
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
+
+        /*
+        |--------------------------------------------------------------------------
+        | Fortify Authentication Views
+        |--------------------------------------------------------------------------
+        |
+        | These closures define the Blade views used for authentication screens
+        | such as login, registration, password reset, and others.
+        |
+        | Fortify does not provide default frontend views. It only handles the
+        | authentication logic, so all views must be explicitly defined here.
+        |
+        */
+        Fortify::loginView(function () {
+            return view('adminlte.auth.login');
+        });
+
+        Fortify::registerView(function () {
+            return view('adminlte.auth.register');
+        });
     }
 }

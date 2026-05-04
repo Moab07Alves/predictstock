@@ -1,4 +1,4 @@
-@extends('adminlte::master')
+@extends('adminlte.master')
 
 @section('adminlte_css')
     @yield('css')

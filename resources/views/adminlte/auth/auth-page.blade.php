@@ -1,4 +1,4 @@
-@extends('adminlte::master')
+@extends('adminlte.master')
 
 @php
     $authType = $authType ?? 'login';

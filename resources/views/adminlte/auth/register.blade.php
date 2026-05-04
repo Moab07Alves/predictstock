@@ -1,4 +1,4 @@
-@extends('adminlte::auth.auth-page', ['authType' => 'register'])
+@extends('adminlte.auth.auth-page', ['authType' => 'register'])
 
 @php
     $loginUrl = View::getSection('login_url') ?? config('adminlte.login_url', 'login');

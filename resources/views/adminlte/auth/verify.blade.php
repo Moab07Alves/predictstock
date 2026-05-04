@@ -1,4 +1,4 @@
-@extends('adminlte::auth.auth-page', ['authType' => 'login'])
+@extends('adminlte.auth.auth-page', ['authType' => 'login'])
 
 @section('auth_header', __('adminlte::adminlte.verify_message'))
 
